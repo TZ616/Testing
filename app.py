@@ -43,8 +43,4 @@ def MHF4U1():
 def ICS4U1():
     return "False"
 
-@app.route("/courses/BAH")
-def BAH():
-    return "False"
-
 app.run(debug=True)
