@@ -6,8 +6,14 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
 db = SQLAlchemy(app)
 
 
-#class Courses(db.Model):
+class Teachers(db.Model):
+    name = db.Column(db.String(50), primary_key = True, nullable = False)
+    course = db.Column(db.String(50), nullable = False)
+    average = db.Column(db.Double, nullable = False)
+    rating = db.Column(db.Integer, nullable = False)
 
+with app.app_context():
+    db.create_all()
 
 @app.route("/")
 def home():
